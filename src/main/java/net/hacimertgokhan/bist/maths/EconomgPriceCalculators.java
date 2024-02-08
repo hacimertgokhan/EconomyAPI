@@ -2,10 +2,10 @@ package net.hacimertgokhan.bist.maths;
 
 import java.util.HashMap;
 
-import static net.hacimertgokhan.bist.maths.Graphics.loadLastCalculateGraphic;
-import static net.hacimertgokhan.utils.ColorsMg.*;
+import static net.hacimertgokhan.bist.maths.EconomgGraphics.loadLastCalculateGraphic;
+import static net.hacimertgokhan.utils.EconomgColors.*;
 
-public class PriceCalculators {
+public class EconomgPriceCalculators {
 
     private String type;
     private double price;
@@ -21,7 +21,7 @@ public class PriceCalculators {
         };
     }
 
-    public PriceCalculators(double price, double lots, String type) {
+    public EconomgPriceCalculators(double price, double lots, String type) {
         this.price = price;
         this.lots = lots;
         this.type = type;

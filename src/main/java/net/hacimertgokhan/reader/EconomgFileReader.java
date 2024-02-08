@@ -1,14 +1,13 @@
 package net.hacimertgokhan.reader;
 
 import net.hacimertgokhan.Main;
-import net.hacimertgokhan.utils.Logger;
 
 import java.io.*;
 import java.util.Properties;
 
-public class FileReader {
+public class EconomgFileReader {
     private Properties languageProperties = new Properties();
-    public FileReader(){}
+    public EconomgFileReader(){}
 
     public void ReadLanguageFile(){
         try (InputStream input = Main.class.getClassLoader().getResourceAsStream("language.properties")) {

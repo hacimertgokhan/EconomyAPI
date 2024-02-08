@@ -2,7 +2,7 @@ package net.hacimertgokhan.api.bist;
 
 import java.io.Serializable;
 
-public interface BIST {
+public interface EMGBIST {
 
     int getBIST100();
     int getBIST50();

@@ -1,6 +1,6 @@
 package net.hacimertgokhan.bist.interfaces;
 
-public interface EconomicMathFunctions {
+public interface EMGEconomicMathFunctions {
 
     /*
        Continuable Function mean is sustainable process package.

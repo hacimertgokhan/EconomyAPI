@@ -1,12 +1,12 @@
 package net.hacimertgokhan.utils;
 
-public class ColorsMg {
+public class EconomgColors {
     public static String RESET = "\u001B[0m";
     public static String RED = "\u001B[31m";
     public static String GREEN = "\u001B[32m";
     public static String YELLOW = "\u001B[33m";
 
-    public ColorsMg() {}
+    public EconomgColors() {}
     public String getColor(String color) {
         switch (color) {
             case "reset":

@@ -1,14 +1,14 @@
 package net.hacimertgokhan.bist;
 
 
-import net.hacimertgokhan.bist.interfaces.EconomicMathFunctions;
-import net.hacimertgokhan.utils.Logger;
+import net.hacimertgokhan.bist.interfaces.EMGEconomicMathFunctions;
+import net.hacimertgokhan.utils.EconomgLogger;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class BIST implements EconomicMathFunctions {
-    Logger logger = new Logger();
+public class EconomgBIST implements EMGEconomicMathFunctions {
+    EconomgLogger economgLogger = new EconomgLogger();
 
     /**
      * @param isRunning 
@@ -27,16 +27,16 @@ public class BIST implements EconomicMathFunctions {
                 continuableFunc.put(func, num);
             } else {
                 Scanner ask = new Scanner(System.in);
-                logger.printn(":ylwYeni bir sürdürülebilir fonksiyon oluşturulsun mu ?");
+                economgLogger.printn(":ylwYeni bir sürdürülebilir fonksiyon oluşturulsun mu ?");
                 switch (ask.nextLine()) {
                     case "yes", "evet":
                         Scanner func_name = new Scanner(System.in);
-                        logger.printn(":grnİşlem onaylandı, fonksiyona vereceğiniz anahtar isim nedir ?");
+                        economgLogger.printn(":grnİşlem onaylandı, fonksiyona vereceğiniz anahtar isim nedir ?");
                         continuableFunc.put(func_name.nextLine().toString(), 0);
-                        logger.printn(String.valueOf(continuableFunc.get(func_name.nextLine().toString())));
+                        economgLogger.printn(String.valueOf(continuableFunc.get(func_name.nextLine().toString())));
                         break;
                     case "no", "hayır":
-                        logger.printn(":redİşlem sonlandırılıyor...");
+                        economgLogger.printn(":redİşlem sonlandırılıyor...");
                         break;
                 }
             }

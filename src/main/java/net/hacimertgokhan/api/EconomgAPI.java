@@ -2,12 +2,12 @@ package net.hacimertgokhan.api;
 import com.google.gson.*;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
-import net.hacimertgokhan.api.bist.BIST;
+import net.hacimertgokhan.api.bist.EMGBIST;
 
 import java.io.Serializable;
 import java.util.HashMap;
 
-public class EconomgAPI implements BIST {
+public class EconomgAPI implements EMGBIST {
     private HashMap<String, String> bist = new HashMap<String, String>();
     private Object object;
     private JsonObject jsonObject;
