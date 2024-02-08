@@ -8,7 +8,7 @@ public class Graphics {
     public static void test_loadLastCalculateGraphic() {
         ArrayList<Integer> f = new ArrayList<>();for(int g=1; g<100; g++) {f.add(g);}
         PriceCalculators priceCalculators = new PriceCalculators(35, 10, "tr");
-        priceCalculators.Calculate(11, priceCalculators.getPrice(), priceCalculators.getLots());
+        priceCalculators.InitialPublicOffering(11);
         Arrays.sort(PriceCalculators.priceList.keySet().toArray(new String[0]));
         ArrayList<String> newList = new ArrayList<>();
         newList.add("\n");

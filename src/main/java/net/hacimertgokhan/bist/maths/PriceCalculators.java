@@ -3,12 +3,9 @@ package net.hacimertgokhan.bist.maths;
 import java.util.HashMap;
 
 import static net.hacimertgokhan.bist.maths.Graphics.loadLastCalculateGraphic;
+import static net.hacimertgokhan.utils.ColorsMg.*;
 
 public class PriceCalculators {
-    String RESET = "\u001B[0m";
-    String RED = "\u001B[31m";
-    String GREEN = "\u001B[32m";
-    String YELLOW = "\u001B[33m";
 
     private String type;
     private double price;
@@ -31,10 +28,10 @@ public class PriceCalculators {
     }
 
     // Halk arz fiyatını girilen takip sayısına kadar hesaplar.
-    public void Calculate(int len, double price, double lots) {
+    public void InitialPublicOffering(int len) {
         double selectedPrice;
         for (int b=0; b<50; b++) {System.out.println('\n');}
-        System.out.println("[İşlemin sırası] - [Tavan Fiyatı / Taban Fiyatı] - [İşlem günü] - [Tavan | Taban Değerlerinde oluşacak bütçe]");
+        System.out.println("[Process] - [Max (+%10) / Min (-%10)] - [Process Day] - [Maximum | Minimum budgets]");
         for(int a=1; a<=(len+1); a++) {
             if(a==1) {
                 priceList.put(("prc_1"), price);
@@ -46,17 +43,15 @@ public class PriceCalculators {
                 double calcTavan = (priceList.get("prc_"+(a-1)).intValue()*lots) ;
                 priceList.put(("prc_"+a), selectedPrice);
                 if(a<11) {
-                    System.out.println("      " + GREEN+"[0" + (a-1) + "]:         " + YELLOW + priceList.get("prc_"+(a-1)).toString().substring(0, 4) + getSymbol() + " / " + String.valueOf(taban).substring(0,4) + getSymbol() + "                    "+RESET+("0"+(a-1))+".              " + RED + String.valueOf(calcTavan).substring(0,5) + " / " + String.valueOf(calcTaban).substring(0,5) + getSymbol() + RESET);
+                    System.out.println("   " + GREEN+"[0" + (a-1) + "]:         " + YELLOW + priceList.get("prc_"+(a-1)).toString().substring(0, 4) + getSymbol() + " / " + String.valueOf(taban).substring(0,4) + getSymbol() + "              "+RESET+("0"+(a-1))+".              " + RED + String.valueOf(calcTavan).substring(0,5) + " / " + String.valueOf(calcTaban).substring(0,5) + getSymbol() + RESET);
                 } else {
-                    System.out.println("      " + GREEN+"[" + (a-1) + "]:         " + YELLOW + priceList.get("prc_"+(a-1)).toString().substring(0, 4) + getSymbol() + " / " + String.valueOf(taban).substring(0,4) + getSymbol() + "                    "+RESET+(a-1)+".              " + RED + String.valueOf(calcTavan).substring(0,5) + " / " + String.valueOf(calcTaban).substring(0,5) + getSymbol() + RESET);
+                    System.out.println("   " + GREEN+"[" + (a-1) + "]:         " + YELLOW + priceList.get("prc_"+(a-1)).toString().substring(0, 4) + getSymbol() + " / " + String.valueOf(taban).substring(0,4) + getSymbol() + "              "+RESET+(a-1)+".              " + RED + String.valueOf(calcTavan).substring(0,5) + " / " + String.valueOf(calcTaban).substring(0,5) + getSymbol() + RESET);
                 }
             }
             last = priceList.get(len);
         }
-        System.out.println(String.format("\nYapılan işlem %s %s fiyat ile (%s) lot miktarından hesaplanmıştır.", price, getSymbol(), lots));
-        System.out.println('\n');
+        System.out.println(String.format("\nCalculated with %s %s, for (%s) amount.", price, getSymbol(), lots));
         loadLastCalculateGraphic();
-        return;
     }
 
     public static Double getCalculatedLastValue() {

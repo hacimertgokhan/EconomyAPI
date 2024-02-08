@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Economg:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Economg_jar</output-path>
+    <root id="archive" name="Economg.jar">
+      <element id="module-output" name="Economg" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/konghq/unirest-java/4.0.0-RC2/unirest-java-4.0.0-RC2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

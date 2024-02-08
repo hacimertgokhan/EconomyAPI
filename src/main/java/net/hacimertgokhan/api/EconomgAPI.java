@@ -77,4 +77,12 @@ public class EconomgAPI implements BIST {
         }
         return 0;
     }
+
+    /**
+     * @return
+     */
+    @Override
+    public Serializable getBISTCompanies() {
+        return bist.toString();
+    }
 }

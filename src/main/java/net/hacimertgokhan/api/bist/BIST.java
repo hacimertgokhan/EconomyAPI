@@ -8,4 +8,5 @@ public interface BIST {
     int getBIST50();
     int getBIST30();
     Serializable getValueOfCompany(String code);
+    Serializable getBISTCompanies();
 }
